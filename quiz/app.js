@@ -163,5 +163,5 @@ nextButton.addEventListener("click", function() {
 });
 
 function back() {
-  window.location.href = "/index.html"
+  window.location.href = "../index.html"
 }
