@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Fira Sans", sans-serif;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.left-screen {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  text-align: left;
+  margin-right: 60px;
+}
+
+.heading {
+  color: #2D3846;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+}
+
+.description {
+  color: #6B7F99;
+  margin-bottom: 20px;
+  font-size: 1.25rem;
+}
+
+.start-bnt {
+  background-color: #2AA7FD;
+  border: none;
+  padding: 0 6%;
+  border-radius: 4px;
+  min-height: 48px;
+  box-shadow: 0 3px #1A6FAD;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.start-bnt:hover {
+  background: #249ae9;
+}
+
+.right-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media (max-width: 1024px) {
+  .content {
+    flex-direction: column-reverse;
+  }
+
+  .left-screen {
+    align-items: center;
+    text-align: center;
+  }
+
+  .right-screen img {
+    max-width: 80%;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .content {
+    margin: auto;
+  }
+
+  .left-screen {
+    margin: 0;
+  }
+
+  .heading {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .left-screen {
+    margin: 0;
+  }
+
+  .heading {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+}
+
+@media (max-width: 390px) {
+  .heading {
+    font-size: 1.5rem;
+  }
+
+  .description {
+    font-size: 0.875rem;
+  }
+}
+
+

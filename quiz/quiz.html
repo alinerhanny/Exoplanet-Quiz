@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="styles.css">
+  <link rel="shortcut icon" href="../img/icons8-capacete-de-astronauta-80.png" type="image/x-icon">
+  <title>Exoplanet Quiz</title>
+</head>
+<body>
+ <div id="main">
+  <header class="lesson-header">
+    <div class="lesson-header-container">
+      <div class="lesson-header-close">
+        <button class="lesson-header-close-bnt">
+          <a href="../index.html"><i class="fa-solid fa-xmark" style="color: #6b7f99;"></i></a>
+        </button>
+        <span>Quiz</span>
+      </div>
+      <div class="progress-wrapper">
+        <i id="prev-question" class="fa-solid fa-chevron-left"></i>
+        <div class="progress-bar-container">
+          <div class="progress-bar" id="progress-bar"></div>
+        </div>
+        <i id="next-question" class="fa-solid fa-chevron-right"></i>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="lesson-page">
+      <div class="question-container">
+        <div class="question">
+          <p>O que é um exoplaneta?</p>
+        </div>
+        <div class="answer-options">
+          <!-- <div class="option initial">Um planeta que orbita o Sol</div>
+          <div class="option selected">Um planeta que orbita uma estrela 
+            fora do nosso sistema solar</div>
+          <div class="option initial">Um planeta que orbita um buraco negro</div>
+        </div> -->
+      </div>
+    </div>
+  </main>
+  <footer class="lesson-footer grey">
+    <div class="lesson-page-option">
+      <button id="check-answer" class="lesson-footer-primary-bnt disable sol-button sol-button-m ">Check</button>
+    </div>
+  </footer>
+ </div>
+
+ <div class="end-screen" style="display: none;">
+  <div class="complete-content">
+    <div class="icon-end-screen">
+      <svg xmlns="http://www.w3.org/2000/svg" height="100px" width="100px" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#14c260" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>
+    </div>
+    <div class="text-end-screen">
+      <h1>Congratulations!</h1>
+      <p>You have now officially
+        become an exoplanet explorer!</p>
+    </div>
+      <div class="footer-end-screen"><button id="initial-screen" onclick="back()">Finish</button></div>
+  </div>
+ </div>
+ <script src="questions.js"></script>
+ <script src="app.js"></script>
+</body>
+</html>
