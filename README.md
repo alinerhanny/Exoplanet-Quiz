@@ -2,7 +2,7 @@
 
 ## Descrição
 
-Este projeto é um quiz interativo que permite aos usuários testar seus conhecimentos sobre exoplanetas. O quiz apresenta uma série de perguntas que variam de níveis fáceis a difíceis, cobrindo tópicos como a descoberta de exoplanetas, suas características, e a importância de estudá-los na astronomia.
+Este projeto é um quiz interativo que permite aos usuários testar seus conhecimentos sobre exoplanetas.
 
 ## Tecnologias Utilizadas
 
