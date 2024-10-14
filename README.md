@@ -22,4 +22,4 @@ Para executar este projeto localmente, siga as etapas abaixo:
 
 1. Clone este repositório:
    ```bash
-   git clone https://github.com/seu-usuario/quiz-exoplanetas.git
+   git clone https://github.com/seu-usuario/quiz-exoplanetas
