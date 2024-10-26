@@ -10,7 +10,7 @@ const header = document.querySelector("header")
 const footer = document.querySelector("footer")
 // Variáveis de controle
 let questionCount = 0; // Contador de perguntas
-let selectedAnswer = ""; // Armazena a resposta selecionada
+let selectedAnswerId = null; // Armazena a resposta selecionada
 
 // Verifica se existem perguntas e inicia a exibição da primeira
 if (questions && questions.length > 0) {
@@ -24,13 +24,12 @@ function showQuestions(index) {
     questionText.textContent = `${questions[index].numb}. ${questions[index].question}`;
 
     // Gera as opções de resposta
-    let optionTag = `
-      <div class="option initial">${questions[index].options[0]}</div>
-      <div class="option initial">${questions[index].options[1]}</div>
-      <div class="option initial">${questions[index].options[2]}</div>
-      <div class="option initial">${questions[index].options[3]}</div>
-    `;
-    optionList.innerHTML = optionTag;
+    let optionTag = ""
+
+    questions[index].options.forEach(option => {
+      optionTag += `<div class="option initial" data-id="${option.id}">${option.text}</div>`
+    })
+    optionList.innerHTML = optionTag
 
     // Seleciona as opções e adiciona evento de clique
     const options = document.querySelectorAll(".option");
@@ -38,7 +37,7 @@ function showQuestions(index) {
       option.addEventListener("click", function() {
         options.forEach(option => option.classList.remove("selected")); // Remove seleção de todas as opções
         this.classList.add("selected"); // Adiciona classe 'selected' à opção clicada
-        selectedAnswer = this.textContent; // Armazena a resposta selecionada
+        selectedAnswerId = parseInt(this.getAttribute("data-id"), 10) // Armazena a resposta selecionada
         checkAnswerButton.classList.add("active"); // Ativa o botão de verificar
       });
     });
@@ -56,14 +55,14 @@ checkAnswerButton.addEventListener("click", checkAnswer);
 
 // Função para verificar a resposta
 function checkAnswer() {
-  if (selectedAnswer) {
-    const correctAnswer = questions[questionCount].correctAnswer; // Obtém a resposta correta
+  if (selectedAnswerId !== null) {
+    const correctAnswerId = questions[questionCount].correctAnswerId; // Obtém a resposta correta
     const boxOption = document.querySelectorAll(".option"); // Seleciona todas as opções
 
     // Verifica se a resposta selecionada está correta
-    if (selectedAnswer === correctAnswer) {
+    if (selectedAnswerId === correctAnswerId) {
       boxOption.forEach(option => {
-        if (option.textContent === correctAnswer) {
+        if (parseInt(option.getAttribute("data-id"), 10) === correctAnswerId) {
           option.classList.add("correct"); // Marca a opção correta
         }
       });
@@ -75,7 +74,7 @@ function checkAnswer() {
       checkAnswerButton.addEventListener("click", nextQuestion); // Adiciona evento para a próxima pergunta
     } else {
       boxOption.forEach(option => {
-        if (option.textContent === selectedAnswer) {
+        if (parseInt(option.getAttribute("data-id"), 10) === selectedAnswerId) {
           option.classList.add("wrong"); // Marca a opção errada
         }
       });
